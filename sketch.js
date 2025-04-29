@@ -7,7 +7,7 @@ let testo = "~$_$~";
 let font;
 
 function preload() {
-  font = loadFont("./assets/InputMonoCondensed-Light.ttf");
+  font = loadFont("./assets/Ubuntu-Medium.ttf");
 }
 
 //
@@ -19,7 +19,7 @@ function setup() {
   angleMode(DEGREES);
 
   textFont(font);
-  textSize(height / 10);
+  textSize(height / rows);
 
   cam = createCamera();
   cam.setPosition(0, 300, 300);
@@ -29,13 +29,13 @@ function setup() {
 //
 
 function draw() {
-  background("blue");
+  background("#8253FF");
   orbitControl();
 
   let angle = 360 / columns;
   let diameter = textSize();
 
-  fill("white");
+  fill("#95DB25");
 
   rotateY(-frameCount);
   for (let i = 0; i < columns; i++) {
@@ -56,4 +56,5 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  textSize(height / rows);
 }
